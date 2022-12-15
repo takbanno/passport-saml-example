@@ -13,6 +13,7 @@ module.exports = function (passport, config) {
   passport.use(new SamlStrategy(
     config.passport.saml,
     function (profile, done) {
+      console.log(profile);
       return done(null,
         {
           id: profile.uid,
