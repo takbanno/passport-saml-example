@@ -16,7 +16,7 @@ var app = express();
 
 app.set('port', config.app.port);
 app.set('views', __dirname + '/app/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.use(morgan('combined'));
 app.use(cookieParser());
 app.use(express.json());
