@@ -1,7 +1,7 @@
 PassportJS SAML example
 =======================
 
-[![Build Status](https://github.com/takbanno/passport-saml-example/actions/workflows/docker-image.yml/badge.svg)]
+![Build Status](https://github.com/takbanno/passport-saml-example/actions/workflows/docker-image.yml/badge.svg)
 
 
 Description
