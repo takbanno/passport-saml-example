@@ -1,8 +1,7 @@
 PassportJS SAML example
 =======================
 
-[![Build Status](https://travis-ci.org/gbraad/passport-saml-example.svg?branch=master)](https://travis-ci.org/gbraad/passport-saml-example)
-[![Code Climate](https://codeclimate.com/github/gbraad/passport-saml-example/badges/gpa.svg)](https://codeclimate.com/github/gbraad/passport-saml-example)
+[![Build Status](https://github.com/takbanno/passport-saml-example/actions/workflows/docker-image.yml/badge.svg)]
 
 
 Description
@@ -16,12 +15,11 @@ Usage
 
 ```bash
 $ npm install
-$ bower install
 $ npm start
 ```
 
 
-Authors
+Original Authors
 -------
 
 | [!["Gerard Braad"](http://gravatar.com/avatar/e466994eea3c2a1672564e45aca844d0.png?s=60)](http://gbraad.nl "Gerard Braad <me@gbraad.nl>") |
