@@ -3,7 +3,7 @@ module.exports = function (app, config, passport) {
 
   app.get('/', function (req, res) {
     if (req.isAuthenticated()) {
-      res.render('home',
+      res.render('profile',
         {
           user: req.user
         });
@@ -33,21 +33,6 @@ module.exports = function (app, config, passport) {
       res.redirect('/');
     }
   );
-
-  app.get('/signup', function (req, res) {
-    res.render('signup');
-  });
-
-  app.get('/profile', function (req, res) {
-    if (req.isAuthenticated()) {
-      res.render('profile',
-        {
-          user: req.user
-        });
-    } else {
-      res.redirect('/login');
-    }
-  });
 
   app.get('/logout', function (req, res) {
     req.logout();

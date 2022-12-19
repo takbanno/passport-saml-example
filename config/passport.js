@@ -15,6 +15,11 @@ module.exports = function (passport, config) {
     function (profile, done) {
       console.log(profile);
       return done(null, profile);
+    },
+    function (profile, done) {
+      // logout
+      console.log(profile);
+      return done(null, profile);
     })
   );
 
