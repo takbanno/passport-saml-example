@@ -14,14 +14,7 @@ module.exports = function (passport, config) {
     config.passport.saml,
     function (profile, done) {
       console.log(profile);
-      return done(null,
-        {
-          id: profile.uid,
-          email: profile.email,
-          displayName: profile.cn,
-          firstName: profile.givenName,
-          lastName: profile.sn
-        });
+      return done(null, profile);
     })
   );
 

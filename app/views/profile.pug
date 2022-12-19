@@ -3,10 +3,12 @@ extends layout
 block content
 	h1 Profile
 
-	dl
-		dt Display name
-		dd #{user.displayName}
-		dt Email
-		dd #{user.email}
+	table(class='table table-striped')
+		tbody
+			each val,key in user
+				tr
+					td=key
+					td=val
 
-	a(href="/logout") Logout
+	h5
+		a(class='link-primary' href="/logout") Logout

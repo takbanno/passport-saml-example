@@ -11,7 +11,8 @@ module.exports = {
         entryPoint: process.env.SAML_ENTRY_POINT || 'https://openidp.feide.no/simplesaml/saml2/idp/SSOService.php',
         issuer: process.env.SAML_ISSUER || 'passport-saml',
         cert: process.env.SAML_CERT || null,
-        protocol: process.env.SAML_PROTOCOL || 'https://'
+        protocol: process.env.SAML_PROTOCOL || 'https://',
+        logoutUrl: process.env.SAML_LOGOUT_URL || null,
       }
     }
   }
