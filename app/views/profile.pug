@@ -1,14 +1,15 @@
 extends layout
 
 block content
-	h1 Profile
+	h1 SAML Profile
 
 	table(class='table table-striped')
 		tbody
 			each val,key in user
-				tr
-					td=key
-					td=val
+				if typeof val != 'object' || Array.isArray(val)
+					tr
+						td=key
+						td=val
 
 	h5
 		a(class='link-primary' href="/logout") Logout
