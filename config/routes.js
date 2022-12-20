@@ -38,7 +38,13 @@ module.exports = function (app, config, strategy, passport) {
       if (err) {
         console.log(err);
       } else {
-        res.redirect(req);
+        req.session.destroy(err => {
+          if (err) {
+            console.log(err);
+          } else {
+            res.redirect(req);
+          }
+        });
       }
     });
   });

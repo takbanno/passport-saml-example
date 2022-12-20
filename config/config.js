@@ -13,6 +13,7 @@ module.exports = {
         cert: process.env.SAML_CERT || null,
         protocol: process.env.SAML_PROTOCOL || 'https://',
         logoutUrl: process.env.SAML_LOGOUT_URL || null,
+        logoutCallbackUrl: process.env.SAML_LOGOUT_CALLBACK || null,
       }
     }
   }
