@@ -34,11 +34,11 @@ module.exports = function (app, config, strategy, passport) {
   );
 
   app.get('/logout', function (req, res) {
-    strategy.logout(err => {
+    strategy.logout(req, (err, req) => {
       if (err) {
         console.log(err);
       } else {
-        res.redirect('/');
+        res.redirect(req);
       }
     });
   });
