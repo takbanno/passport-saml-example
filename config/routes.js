@@ -38,7 +38,7 @@ module.exports = function (app, config, strategy, passport) {
       if (err) {
         console.log(err);
       } else {
-        req.session.destroy(err => {
+        req.logout(err => {
           if (err) {
             console.log(err);
           } else {
