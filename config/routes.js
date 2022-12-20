@@ -34,7 +34,7 @@ module.exports = function (app, config, strategy, passport) {
   );
 
   app.get('/logout', function (req, res) {
-    strategy.logout(req, (err, req) => {
+    strategy.logout(req, (err, requestUrl) => {
       if (err) {
         console.log(err);
       } else {
@@ -42,7 +42,7 @@ module.exports = function (app, config, strategy, passport) {
           if (err) {
             console.log(err);
           } else {
-            res.redirect(req);
+            res.redirect(requestUrl);
           }
         });
       }
