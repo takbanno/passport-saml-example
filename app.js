@@ -10,7 +10,8 @@ const config = require('./config/config')[env];
 
 console.log('Using configuration', config);
 
-require('./config/passport')(passport, config);
+const strategy = require('./config/strategy')(config);
+require('./config/passport')(passport, strategy);
 
 var app = express();
 
@@ -31,7 +32,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-require('./config/routes')(app, config, passport);
+require('./config/routes')(app, config, strategy, passport);
 
 app.listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));

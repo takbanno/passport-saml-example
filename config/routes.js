@@ -1,5 +1,4 @@
-
-module.exports = function (app, config, passport) {
+module.exports = function (app, config, strategy, passport) {
 
   app.get('/', function (req, res) {
     if (req.isAuthenticated()) {
@@ -35,11 +34,12 @@ module.exports = function (app, config, passport) {
   );
 
   app.get('/logout', function (req, res) {
-    req.logout(err => {
+    strategy.logout(err => {
       if (err) {
-        return next(err);
+        console.log(err);
+      } else {
+        res.redirect('/');
       }
-      res.redirect('/');
     });
   });
 

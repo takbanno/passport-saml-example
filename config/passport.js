@@ -1,6 +1,4 @@
-const SamlStrategy = require('passport-saml').Strategy;
-
-module.exports = function (passport, config) {
+module.exports = function (passport, strategy) {
 
   passport.serializeUser(function (user, done) {
     done(null, user);
@@ -10,17 +8,6 @@ module.exports = function (passport, config) {
     done(null, user);
   });
 
-  passport.use(new SamlStrategy(
-    config.passport.saml,
-    function (profile, done) {
-      console.log(profile);
-      return done(null, profile);
-    },
-    function (profile, done) {
-      // logout
-      console.log(profile);
-      return done(null, profile);
-    })
-  );
+  passport.use(strategy);
 
 };
