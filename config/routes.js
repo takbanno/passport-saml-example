@@ -35,9 +35,12 @@ module.exports = function (app, config, passport) {
   );
 
   app.get('/logout', function (req, res) {
-    req.logout();
-    // TODO: invalidate session on IP
-    res.redirect('/');
+    req.logout(err => {
+      if (err) {
+        return next(err);
+      }
+      res.redirect('/');
+    });
   });
 
 };
