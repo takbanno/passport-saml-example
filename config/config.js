@@ -14,6 +14,8 @@ module.exports = {
         protocol: process.env.SAML_PROTOCOL || 'https://',
         logoutUrl: process.env.SAML_LOGOUT_URL || null,
         logoutCallbackUrl: process.env.SAML_LOGOUT_CALLBACK || null,
+        forceAuthn: process.env.SAML_FORCE_AUTHN || null,
+        passive: process.env.SAML_PASSIVE || null,
       }
     }
   }
